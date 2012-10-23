@@ -1,5 +1,6 @@
 assert(require('alien'))
-g2log=alien.load("Debug/g2log")
+--g2log=alien.load("Debug/g2log")
+g2log=alien.load("Release/g2log")
 assert(g2log)
 
 g2log.init_g2log:types('int','string','string')

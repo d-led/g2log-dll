@@ -6,9 +6,9 @@
 #include <memory>
 #include <iostream>
 
-extern "C" G2LOG_DLL bool init_g2log (const char* prefix,const char* location) {
+static std::unique_ptr<g2LogWorker> current_worker=0;
 
-	static std::unique_ptr<g2LogWorker> current_worker=0;
+extern "C" __declspec(dllexport) bool init_g2log (const char* prefix,const char* location) {
 
 	current_worker.reset(new g2LogWorker(prefix, location));
 	g2::initializeLogging(current_worker.get());
@@ -17,7 +17,8 @@ extern "C" G2LOG_DLL bool init_g2log (const char* prefix,const char* location) {
 	return current_worker!=0;
 }
 
-extern "C" G2LOG_DLL void stop_g2log () {
+extern "C" __declspec(dllexport) void stop_g2log () {
 	g2::shutDownLogging();
+	current_worker=0;
 }
 

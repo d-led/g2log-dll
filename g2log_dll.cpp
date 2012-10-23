@@ -16,3 +16,8 @@ extern "C" G2LOG_DLL bool init_g2log (const char* prefix,const char* location) {
 	std::cout<<current_worker.get()<<std::endl;
 	return current_worker!=0;
 }
+
+extern "C" G2LOG_DLL void stop_g2log () {
+	g2::shutDownLogging();
+}
+

@@ -17,7 +17,7 @@
   #endif // _COMPILING_G2LOG_DLL         //--------4-----------+    |
                                                             // |    |
 
-  LIBSPEC bool init_g2log (const char* prefix,const char* location);
+  LIBSPEC int init_g2log (const char* prefix,const char* location);
   LIBSPEC void stop_g2log ();
 
   // ... more declarations as needed                        // |    |

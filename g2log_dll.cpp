@@ -21,3 +21,8 @@ extern "C" __declspec(dllexport) void stop_g2log () {
 	current_worker=0;
 }
 
+extern "C" __declspec(dllexport) void printf_g2log(const char* _file,const int _line,const char* _function,const char* _level,const char* _message)
+{
+	g2::internal::LogMessage(_file,_line,_function,_level).messageSave(_message);
+}
+

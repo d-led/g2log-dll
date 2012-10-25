@@ -8,6 +8,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vs11test", "vs11test\vs11te
 		{5E912B26-04DE-4AC2-B22D-9F0E53ACDCCD} = {5E912B26-04DE-4AC2-B22D-9F0E53ACDCCD}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vs11-statictest", "vs11test\vs11-statictest.vcxproj", "{79A88FC0-C547-4629-9FE1-122ED664137A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -22,6 +24,10 @@ Global
 		{5EB1221E-43B9-46B1-AA0A-FAFB09C2D5EE}.Debug|Win32.Build.0 = Debug|Win32
 		{5EB1221E-43B9-46B1-AA0A-FAFB09C2D5EE}.Release|Win32.ActiveCfg = Release|Win32
 		{5EB1221E-43B9-46B1-AA0A-FAFB09C2D5EE}.Release|Win32.Build.0 = Release|Win32
+		{79A88FC0-C547-4629-9FE1-122ED664137A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{79A88FC0-C547-4629-9FE1-122ED664137A}.Debug|Win32.Build.0 = Debug|Win32
+		{79A88FC0-C547-4629-9FE1-122ED664137A}.Release|Win32.ActiveCfg = Release|Win32
+		{79A88FC0-C547-4629-9FE1-122ED664137A}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

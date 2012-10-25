@@ -16,9 +16,9 @@ Usage
 
 Check out the project into the g2log repository first.
 
-Building is currently supported using Visual Studio 2012 Express using the provided solution, or on linux:
+Building is currently supported using Visual Studio 2012 Express using the provided solution, or on linux from the g2log-dll folder:
 <pre>
-./premake gmake
+./premake4 gmake
 cd Build
 make
 </pre>
@@ -44,9 +44,10 @@ Dependencies
  * [Boost](http://www.boost.org/) for cross-compiler testing
 
 Compilers
--------------------
+---------
 
-known to work with
+the resulting dynamic library is known to work with
+
  * Visual Studio 2008 (Express), 2012 (Express)
  * gcc 4.7.2 (linux,using premake build)
 

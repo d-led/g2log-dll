@@ -25,7 +25,7 @@ public:
     void operator()() const
      {
 		 for (int i=0; i<times;i++) {
-			 printf_g2log("1",33,name.c_str(),"WARN","a log message");
+			 printf_g2log(name.c_str(),33,name.c_str(),"WARN","a log message");
 		 }
      }
 public:

@@ -1,5 +1,7 @@
 local OS=os.get()
 
+local BOOST="/home/dled/src/boost_1_51_0/"
+
 local cmd = {
  dir = { linux = "ls", windows = "dir" }
 }
@@ -49,9 +51,12 @@ local sln=solution "g2log-dll"
 		sln.absbasedir=path.getabsolute(sln.basedir)
 		configurations { "Debug", "Release" }
 		platforms { "native" }
-		libdirs { }
+		libdirs {
+			path.join(BOOST,"stage/lib")
+		}
 		includedirs {
-			[[../src]]
+			[[../src]],
+			BOOST
 		}
 		vpaths {
 			["Headers"] = {"**.h","**.hpp"},
@@ -66,10 +71,40 @@ local sln=solution "g2log-dll"
 		DefaultConfig()
 		language "C++"
 		files {
-			"../src/*.h",
-			"../src/*.cpp",
-			"../src/*.hpp",
-			"../src/*.cpp"
+			"../src/active.h",
+			"../src/active.cpp",
+			"../src/crashhandler.h",
+			"../src/crashhandler_unix.cpp",--todo configurable
+			"../src/g2future.h",
+			"../src/g2log.h",
+			"../src/g2log.cpp",
+			"../src/g2logworker.h",
+			"../src/g2logworker.cpp",
+			"../src/g2time.h",
+			"../src/g2time.cpp",
+			"../src/shared_queue.h",
+			"g2log_dll.h",
+			"g2log_dll.cpp"
 		}
 		if (OS=='linux') then links { "lua" }
 		else  links { "lua5.1" } end
+
+local simpletest=project "simpletest"
+	local basedir="vs11test"
+	kind "ConsoleApp"
+	DefaultConfig()
+	language "C++"
+	files {
+		path.join(basedir,"test.cpp")
+	}
+	uses {
+		"g2log"
+	}
+	links {
+		"g2log",
+		"boost_timer",
+		"boost_chrono",
+		"boost_system"
+	}
+--	CompilerSpecificConfiguration()
+--	ConfigureGtestTuple()

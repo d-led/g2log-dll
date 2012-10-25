@@ -104,7 +104,8 @@ local simpletest=project "simpletest"
 		"g2log",
 		"boost_timer",
 		"boost_chrono",
-		"boost_system"
+		"boost_system",
+		"boost_thread"
 	}
 --	CompilerSpecificConfiguration()
 --	ConfigureGtestTuple()

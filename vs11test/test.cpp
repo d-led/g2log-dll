@@ -56,6 +56,7 @@ static void multi_threaded_test(int count,int max_threads)
 {
 	for (int thread_count=1; thread_count<=max_threads; thread_count++) {
 		test_n_threads(count,thread_count);
+		boost::this_thread::sleep(boost::posix_time::milliseconds(1000));
 	}
 }
 

@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "g2log", "g2log.vcxproj", "{5E912B26-04DE-4AC2-B22D-9F0E53ACDCCD}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vs11test", "vs11test\vs11test.vcxproj", "{5EB1221E-43B9-46B1-AA0A-FAFB09C2D5EE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5E912B26-04DE-4AC2-B22D-9F0E53ACDCCD} = {5E912B26-04DE-4AC2-B22D-9F0E53ACDCCD}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

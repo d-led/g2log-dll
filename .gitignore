@@ -10,7 +10,7 @@
 # Build results
 
 [Dd]ebug*/
-[Rr]elease/
+[Rr]elease*/
 
 build/
 
@@ -109,3 +109,6 @@ UpgradeLog*.XML
 packages/
 
 Build/
+
+*.tlog
+*.exp

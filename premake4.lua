@@ -59,7 +59,7 @@ local sln=solution "g2log-dll"
 	location "Build"
 		sln.absbasedir=path.getabsolute(sln.basedir)
 		configurations { "Debug", "Release" }
-		platforms { "native" }
+		platforms { "native", "x32", "x64" }
 		libdirs {
 			cfg.BOOST_LIB
 		}

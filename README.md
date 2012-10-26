@@ -1,10 +1,9 @@
 Summary
 =======
 
+This is currently a research on using the [wonderful asynchronous C++11 logger g2log](http://www.codeproject.com/Articles/288827/g2log-An-efficient-asynchronous-logger-using-Cplus) in a pre-C++11 project.
 
-This is a research on using the [wonderful asynchronous C++11 logger g2log](http://www.codeproject.com/Articles/288827/g2log-An-efficient-asynchronous-logger-using-Cplus) in a pre-C++11 project.
-
-For that purpose, g2log is compiled as a dynamically loaded library (shared objec on linux).
+For that purpose, g2log is compiled as a dynamically loaded library (shared object on linux).
 
 The goal is to provide the same syntax for logging by means of a header mimicing the g2log api and a binary safe api that will be used to delegate the calls to the g2log in the dll.
 

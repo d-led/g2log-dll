@@ -1,15 +1,24 @@
 local OS=os.get()
 
-local BOOST="/home/dled/src/boost_1_51_0/"
-
-local cmd = {
- dir = { linux = "ls", windows = "dir" }
+local definitions = {
+	dir = {
+		linux = "ls",
+		windows = "dir"
+	},
+	BOOST =  {
+		linux = "/home/dled/src/boost_1_51_0/",
+		windows = os.getenv("BOOST")
+	},
+	BOOST_LIB = {
+		linux = path.join("/home/dled/src/boost_1_51_0/","stage/lib"),
+		windows = path.join(os.getenv("BOOST"),"stage/lib")
+	}
 }
 
-local Commands={}
+local cfg={}
 
-for i,v in pairs(cmd) do
- Commands[i]=cmd[i][OS]
+for i,v in pairs(definitions) do
+ cfg[i]=definitions[i][OS]
 end
 
 -- Apply to current "filter" (solution/project)
@@ -52,11 +61,11 @@ local sln=solution "g2log-dll"
 		configurations { "Debug", "Release" }
 		platforms { "native" }
 		libdirs {
-			path.join(BOOST,"stage/lib")
+			cfg.BOOST_LIB
 		}
 		includedirs {
 			[[../src]],
-			BOOST
+			cfg.BOOST
 		}
 		vpaths {
 			["Headers"] = {"**.h","**.hpp"},
